@@ -1,5 +1,5 @@
 /*
-baekjoon #11286
+baekjoon #11286 https://www.acmicpc.net/problem/11286
 2022.08.28
 2022.09.17
 */

@@ -1,6 +1,6 @@
 /*
- * baekjoon #11444
- * 2023.01.22
+baekjoon #11444 https://www.acmicpc.net/problem/11444
+2023.01.22
 */
 #include <cstdio>
 #define P 1000000007

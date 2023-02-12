@@ -1,5 +1,5 @@
 /*
-baekjoon #11401
+baekjoon #11401 https://www.acmicpc.net/problem/11401
 2022.10.02
 */
 #include <cstdio>

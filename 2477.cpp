@@ -1,6 +1,6 @@
 /*
+baekjoon #2477 https://www.acmicpc.net/problem/2477
 2022.10.28
-baekjoon 2477
 */
 #include <cstdio>
 

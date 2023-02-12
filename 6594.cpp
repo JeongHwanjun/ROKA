@@ -1,5 +1,5 @@
 /*
-baekjoon #6594
+baekjoon #6594 https://www.acmicpc.net/problem/6549
 2023.02.12
 */
 

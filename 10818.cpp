@@ -1,5 +1,5 @@
 /*
-baekjoon #10818
+baekjoon #10818 https://www.acmicpc.net/problem/10818
 2022.08.18
 */
 #include <iostream>
