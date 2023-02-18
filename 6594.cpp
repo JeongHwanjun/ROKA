@@ -2,6 +2,7 @@
 baekjoon #6594 https://www.acmicpc.net/problem/6549
 2023.02.12
 2023.02.17
+2023.02.18
 */
 
 /*
@@ -18,7 +19,7 @@ mid에서 출발하는 두개의 포인터, 한쪽은 좌측으로, 한쪽은 �
 long long int ary[120000];
 
 long long int divide(int left, int right);
-long long int merge(int left, int right, int leftLmt, int rightLmt);
+long long int merge(long long int left, long long int right, long long int leftLmt, long long int rightLmt);
 
 int main()
 {
@@ -56,9 +57,9 @@ long long int divide(int left, int right)
     }
 }
 
-long long int merge(int left, int right, int leftLmt, int rightLmt)
+long long int merge(long long int left, long long int right, long long int leftLmt, long long int rightLmt)
 {
-    int height=ary[left]>ary[right] ? ary[right]:ary[left];
+    long long int height=ary[left]>ary[right] ? ary[right]:ary[left];
     long long int max=-1;
 
     while(left>=leftLmt && right<=rightLmt){
@@ -67,8 +68,13 @@ long long int merge(int left, int right, int leftLmt, int rightLmt)
 
         long long int area=height*(right-left+1);
         max=area>max ? area:max;
-        if(ary[left-1]>ary[right+1]) left--;
-        else right++;
+		if(left<=leftLmt) right++;
+		else if(right>=rightLmt) left--;
+		else{
+			if(ary[left-1]>ary[right+1]) left--;
+			else right++;
+		}
+        
     }
 
     return max;
