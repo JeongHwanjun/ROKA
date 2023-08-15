@@ -1,25 +1,22 @@
 function init(self)
 	msg.post(".", "acquire_input_focus")
-	self.counter=0
+	
+	self.ld_counter={}
+	self.savepath=sys.get_save_file("Mobile game", "sv")
+	self.ld_counter=sys.load(self.savepath)
+	if not next(self.ld_counter) then
+		self.counter=0
+	else
+		self.counter=self.ld_counter[1]
+	end
 	self.text=gui.get_node("text")
+	gui.set_text(self.text, self.counter)
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
-function update(self, dt)
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
-function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
+	local sv_counter={}
+	table.insert(sv_counter, self.counter)
+	sys.save(self.savepath, sv_counter)
 end
 
 function on_input(self, action_id, action)
@@ -27,10 +24,4 @@ function on_input(self, action_id, action)
 		self.counter=self.counter+1
 		gui.set_text(self.text, self.counter)
 	end
-end
-
-function on_reload(self)
-	-- Add reload-handling code here
-	-- Learn more: https://defold.com/manuals/hot-reload/
-	-- Remove this function if not needed
 end
